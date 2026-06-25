@@ -24,7 +24,131 @@ const titleMap: Record<Lang, string> = {
   uk: 'NexiaMC — ШІ-автоматизація для вашого бізнесу'
 };
 
-const iconColors = ['icon-blue','icon-cyan','icon-purple','icon-green','icon-orange','icon-teal','icon-pink','icon-red','icon-blue','icon-cyan','icon-purple','icon-green'];
+const iconColors = ['icon-blue','icon-cyan','icon-purple','icon-green','icon-orange','icon-teal','icon-pink','icon-red','icon-blue','icon-cyan','icon-purple','icon-green','icon-blue'];
+
+const allProblemDetails: Record<string, string[]> = {
+  es: [
+    'Cada minuto sin respuesta es un cliente que se va con la competencia. Con un agente IA respondes en segundos, 24 horas al día, los 7 días de la semana, sin contratar más personal.',
+    'Las tareas repetitivas pueden consumir hasta el 40% de tu jornada laboral. Automatizarlas no solo ahorra tiempo — te permite enfocarte en lo que realmente genera dinero.',
+    'Sin un CRM o sistema centralizado, los leads se pierden entre chats, emails y notas. Un sistema organizado puede aumentar tu tasa de conversión hasta un 30%.',
+    'El 70% de los leads no convierten porque nadie hace seguimiento a tiempo. Un sistema automático garantiza que ninguna oportunidad se escape nunca más.',
+    'El 97% de los consumidores buscan negocios online antes de comprar. Sin una web profesional y optimizada, tu negocio simplemente no existe para ellos.',
+    'Sin visibilidad del estado de tus prospectos, es imposible optimizar tu proceso de ventas. Con un dashboard sabes exactamente qué acción tomar en cada momento.'
+  ],
+  en: [
+    'Every minute without a reply is a client lost to the competition. With an AI agent you respond in seconds, 24/7, without hiring extra staff.',
+    'Repetitive tasks can consume up to 40% of your workday. Automating them frees you to focus on what actually generates revenue.',
+    'Without a CRM, leads get lost in chats, emails and notes. An organized system can increase your conversion rate by up to 30%.',
+    '70% of leads don\'t convert because no one follows up in time. An automated system ensures no opportunity ever slips through the cracks.',
+    '97% of consumers search online before buying. Without a professional, optimized website, your business simply doesn\'t exist for them.',
+    'Without visibility into your prospects\' status, it\'s impossible to optimize your sales process. A dashboard tells you exactly what action to take at every moment.'
+  ],
+  de: [
+    'Jede Minute ohne Antwort ist ein Kunde, der zur Konkurrenz geht. Mit einem KI-Agenten antworten Sie in Sekunden, rund um die Uhr, ohne zusätzliches Personal.',
+    'Sich wiederholende Aufgaben können bis zu 40 % Ihres Arbeitstages beanspruchen. Durch Automatisierung können Sie sich auf das konzentrieren, was wirklich Geld einbringt.',
+    'Ohne ein CRM gehen Leads in Chats, E-Mails und Notizen verloren. Ein organisiertes System kann Ihre Konversionsrate um bis zu 30 % steigern.',
+    '70 % der Leads konvertieren nicht, weil niemand rechtzeitig nachfasst. Ein automatisches System stellt sicher, dass keine Chance mehr verloren geht.',
+    '97 % der Verbraucher suchen vor dem Kauf online. Ohne professionelle Website existiert Ihr Unternehmen für sie schlicht nicht.',
+    'Ohne Einblick in den Status Ihrer Interessenten ist es unmöglich, den Verkaufsprozess zu optimieren. Mit einem Dashboard wissen Sie genau, was zu tun ist.'
+  ],
+  pt: [
+    'Cada minuto sem resposta é um cliente que vai para a concorrência. Com um agente IA você responde em segundos, 24/7, sem contratar mais pessoal.',
+    'As tarefas repetitivas podem consumir até 40% da sua jornada. Automatizá-las permite que você se concentre no que realmente gera receita.',
+    'Sem um CRM, os leads se perdem entre chats, emails e notas. Um sistema organizado pode aumentar sua taxa de conversão em até 30%.',
+    '70% dos leads não convertem porque ninguém faz acompanhamento a tempo. Um sistema automático garante que nenhuma oportunidade escape.',
+    '97% dos consumidores pesquisam online antes de comprar. Sem um site profissional e otimizado, o seu negócio simplesmente não existe para eles.',
+    'Sem visibilidade do estado dos seus prospectos, é impossível otimizar o processo de vendas. Um dashboard diz exatamente que ação tomar em cada momento.'
+  ],
+  uk: [
+    'Кожна хвилина без відповіді — це клієнт, який іде до конкурентів. З ШІ-агентом ви відповідаєте за секунди, 24/7, без найму додаткового персоналу.',
+    'Повторювані завдання можуть займати до 40% робочого дня. Автоматизація дозволяє зосередитися на тому, що реально приносить гроші.',
+    'Без CRM ліди губляться в чатах, листах і нотатках. Організована система може збільшити конверсію до 30%.',
+    '70% лідів не конвертуються, бо ніхто не відстежує їх вчасно. Автоматична система гарантує, що жодна можливість не пройде повз.',
+    '97% споживачів шукають бізнес онлайн перед покупкою. Без сайту ваш бізнес для них просто не існує.',
+    'Без видимості статусу проспектів неможливо оптимізувати продажі. З дашбордом ви точно знаєте, яку дію вжити в кожен момент.'
+  ]
+};
+
+const allServiceDetails: Record<string, string[]> = {
+  es: [
+    '✦ Aumenta conversiones hasta 3x con diseño orientado a ventas.\n✦ Carga rápida y SEO optimizado para que Google te encuentre primero.\n✦ Diseñada para convertir visitantes en clientes desde el primer segundo.',
+    '✦ Responde y califica leads automáticamente, sin intervención humana.\n✦ Disponible 24/7 — nunca pierde una oportunidad de venta.\n✦ Aprende y mejora con cada conversación para optimizar resultados.',
+    '✦ El 80% de los clientes prefieren WhatsApp como canal de comunicación.\n✦ Respuestas instantáneas que generan confianza y aumentan ventas.\n✦ Automatiza seguimientos y recordatorios sin ningún esfuerzo.',
+    '✦ El email marketing genera $42 por cada $1 invertido.\n✦ Secuencias automatizadas que nutren leads hasta convertirlos en clientes.\n✦ Mensaje correcto para la persona correcta en el momento exacto.',
+    '✦ Centraliza toda la información de clientes en un solo lugar.\n✦ Reduce el tiempo de gestión hasta un 60% con flujos automatizados.\n✦ Visualiza el pipeline de ventas y detecta oportunidades al instante.',
+    '✦ Toma decisiones basadas en datos reales, no en intuición.\n✦ Detecta patrones y tendencias antes que tu competencia.\n✦ KPIs en tiempo real para actuar rápido cuando más importa.',
+    '✦ Elimina hasta el 70% de tareas manuales y repetitivas.\n✦ Reduce errores humanos y aumenta la consistencia operativa.\n✦ Tu equipo enfocado en lo que realmente genera valor.',
+    '✦ Conecta todas tus herramientas en un ecosistema unificado.\n✦ Datos sincronizados en tiempo real entre plataformas.\n✦ Elimina el trabajo doble y los errores de transferencia manual.',
+    '✦ Reduce las cancelaciones hasta un 80% con recordatorios automáticos.\n✦ Agenda disponible 24/7 para que los clientes reserven cuando quieran.\n✦ Libera horas de tu equipo para tareas de mayor valor.',
+    '✦ Captura leads cualificados directamente en tu CRM automáticamente.\n✦ Validación automática de datos para mantener tu base limpia.\n✦ Formularios optimizados que aumentan la tasa de conversión.',
+    '✦ Primera impresión profesional para cada cliente que contacta.\n✦ Cero llamadas perdidas — cada contacto queda registrado.\n✦ Agenda citas y responde preguntas frecuentes sin personal adicional.',
+    '✦ Implementa IA estratégica y rentable desde el primer día.\n✦ Evita errores costosos con una hoja de ruta personalizada.\n✦ Maximiza el ROI de cada herramienta de automatización que adoptas.',
+    '✦ Tu negocio en el bolsillo de tus clientes, siempre disponible.\n✦ Notificaciones push que mantienen el engagement en máximos.\n✦ Experiencia nativa que genera fidelidad y diferencia tu marca.'
+  ],
+  en: [
+    '✦ Increases conversions up to 3x with a sales-oriented design.\n✦ Fast loading and SEO optimized so Google finds you first.\n✦ Built to turn visitors into clients from the very first second.',
+    '✦ Automatically responds and qualifies leads, no human needed.\n✦ Available 24/7 — never misses a sales opportunity.\n✦ Learns and improves with every conversation.',
+    '✦ 80% of clients prefer WhatsApp as their communication channel.\n✦ Instant replies that build trust and increase sales.\n✦ Automates follow-ups and reminders without any effort.',
+    '✦ Email marketing generates $42 for every $1 invested.\n✦ Automated sequences that nurture leads until they become clients.\n✦ Right message, right person, right moment.',
+    '✦ Centralizes all client information in one single place.\n✦ Reduces management time by up to 60% with automated flows.\n✦ Visualize your sales pipeline and spot opportunities instantly.',
+    '✦ Make decisions based on real data, not intuition.\n✦ Detect patterns and trends before your competition.\n✦ Real-time KPIs to act fast when it matters most.',
+    '✦ Eliminates up to 70% of manual and repetitive tasks.\n✦ Reduces human errors and increases operational consistency.\n✦ Your team focused on what truly generates value.',
+    '✦ Connect all your tools in a unified ecosystem.\n✦ Data synchronized in real time across platforms.\n✦ Eliminates duplicate work and manual data transfer errors.',
+    '✦ Reduces cancellations by up to 80% with automatic reminders.\n✦ Schedule available 24/7 so clients can book whenever they want.\n✦ Frees up hours of your team for higher-value tasks.',
+    '✦ Captures qualified leads directly in your CRM automatically.\n✦ Automatic data validation to keep your contact base clean.\n✦ Optimized forms that increase conversion rates with zero friction.',
+    '✦ Professional first impression for every client who reaches out.\n✦ Zero missed calls — every contact is recorded.\n✦ Schedules appointments and answers FAQs without extra staff.',
+    '✦ Implement AI strategically and profitably from day one.\n✦ Avoid costly mistakes with a personalized roadmap.\n✦ Maximize the ROI of every automation tool you adopt.',
+    '✦ Your business in your clients\' pocket, always available.\n✦ Push notifications that keep engagement at its peak.\n✦ Native experience that builds loyalty and sets your brand apart.'
+  ],
+  de: [
+    '✦ Steigert die Konversionen um das bis 3-fache mit verkaufsorientiertem Design.\n✦ Schnell ladend und SEO-optimiert, damit Google Sie zuerst findet.\n✦ Entwickelt, um Besucher von der ersten Sekunde an in Kunden zu verwandeln.',
+    '✦ Antwortet und qualifiziert Leads automatisch ohne menschliches Eingreifen.\n✦ Rund um die Uhr verfügbar — verpasst keine Verkaufschance.\n✦ Lernt und verbessert sich mit jedem Gespräch.',
+    '✦ 80 % der Kunden bevorzugen WhatsApp als Kommunikationskanal.\n✦ Sofortige Antworten, die Vertrauen aufbauen und den Umsatz steigern.\n✦ Automatisiert Nachfassaktionen und Erinnerungen mühelos.',
+    '✦ E-Mail-Marketing erzielt 42 $ für jeden investierten $1.\n✦ Automatisierte Sequenzen, die Leads zu Kunden entwickeln.\n✦ Die richtige Nachricht für die richtige Person zum richtigen Zeitpunkt.',
+    '✦ Zentralisiert alle Kundendaten an einem einzigen Ort.\n✦ Reduziert den Verwaltungsaufwand um bis zu 60 % mit automatisierten Abläufen.\n✦ Visualisieren Sie Ihre Verkaufspipeline und erkennen Sie Chancen sofort.',
+    '✦ Entscheidungen auf Basis echter Daten, nicht Bauchgefühl.\n✦ Erkennen Sie Muster und Trends, bevor es die Konkurrenz tut.\n✦ Echtzeit-KPIs, um schnell zu handeln, wenn es darauf ankommt.',
+    '✦ Eliminiert bis zu 70 % der manuellen und sich wiederholenden Aufgaben.\n✦ Reduziert menschliche Fehler und erhöht die Betriebskonsistenz.\n✦ Ihr Team konzentriert sich auf das, was wirklich Mehrwert schafft.',
+    '✦ Verbindet alle Ihre Tools in einem einheitlichen Ökosystem.\n✦ Daten in Echtzeit über Plattformen hinweg synchronisiert.\n✦ Eliminiert Doppelarbeit und manuelle Datenübertragungsfehler.',
+    '✦ Reduziert Stornierungen um bis zu 80 % mit automatischen Erinnerungen.\n✦ Terminkalender rund um die Uhr, damit Kunden jederzeit buchen können.\n✦ Spart Ihrem Team Stunden für Aufgaben mit höherem Mehrwert.',
+    '✦ Erfasst qualifizierte Leads direkt automatisch in Ihrem CRM.\n✦ Automatische Datenvalidierung für eine saubere Kontaktdatenbank.\n✦ Optimierte Formulare steigern die Konversionsrate reibungslos.',
+    '✦ Professioneller erster Eindruck für jeden Kunden, der sich meldet.\n✦ Keine verpassten Anrufe — jeder Kontakt wird erfasst.\n✦ Vereinbart Termine und beantwortet häufige Fragen ohne weiteres Personal.',
+    '✦ KI strategisch und rentabel von Anfang an implementieren.\n✦ Kostspielige Fehler mit einer personalisierten Roadmap vermeiden.\n✦ Maximieren Sie den ROI jedes Automatisierungstools.',
+    '✦ Ihr Unternehmen immer in der Tasche Ihrer Kunden verfügbar.\n✦ Push-Benachrichtigungen, die das Engagement auf Höchstniveau halten.\n✦ Native Erfahrung, die Loyalität schafft und Ihre Marke differenziert.'
+  ],
+  pt: [
+    '✦ Aumenta conversões em até 3x com design orientado a vendas.\n✦ Carregamento rápido e SEO otimizado para o Google encontrar você primeiro.\n✦ Projetado para converter visitantes em clientes desde o primeiro segundo.',
+    '✦ Responde e qualifica leads automaticamente sem intervenção humana.\n✦ Disponível 24/7 — nunca perde uma oportunidade de venda.\n✦ Aprende e melhora a cada conversa para otimizar resultados.',
+    '✦ 80% dos clientes preferem WhatsApp como canal de comunicação.\n✦ Respostas instantâneas que geram confiança e aumentam vendas.\n✦ Automatiza follow-ups e lembretes sem nenhum esforço.',
+    '✦ O email marketing gera $42 por cada $1 investido.\n✦ Sequências automatizadas que nutrem leads até se tornarem clientes.\n✦ A mensagem certa para a pessoa certa no momento exato.',
+    '✦ Centraliza todas as informações de clientes num único lugar.\n✦ Reduz o tempo de gestão em até 60% com fluxos automatizados.\n✦ Visualize o pipeline de vendas e detecte oportunidades ao instante.',
+    '✦ Tome decisões com base em dados reais, não em intuição.\n✦ Detecte padrões e tendências antes da concorrência.\n✦ KPIs em tempo real para agir rápido quando mais importa.',
+    '✦ Elimina até 70% das tarefas manuais e repetitivas.\n✦ Reduz erros humanos e aumenta a consistência operacional.\n✦ Sua equipe focada no que realmente gera valor.',
+    '✦ Conecta todas as suas ferramentas em um ecossistema unificado.\n✦ Dados sincronizados em tempo real entre plataformas.\n✦ Elimina trabalho duplo e erros de transferência manual de dados.',
+    '✦ Reduz cancelamentos em até 80% com lembretes automáticos.\n✦ Agenda disponível 24/7 para os clientes reservarem quando quiserem.\n✦ Libera horas da sua equipe para tarefas de maior valor.',
+    '✦ Captura leads qualificados diretamente no seu CRM automaticamente.\n✦ Validação automática de dados para manter sua base de contatos limpa.\n✦ Formulários otimizados que aumentam a taxa de conversão sem fricção.',
+    '✦ Primeira impressão profissional para cada cliente que entra em contato.\n✦ Zero chamadas perdidas — cada contato fica registrado.\n✦ Agenda compromissos e responde perguntas frequentes sem pessoal adicional.',
+    '✦ Implemente IA de forma estratégica e rentável desde o primeiro dia.\n✦ Evite erros caros com um roteiro personalizado para o seu negócio.\n✦ Maximize o ROI de cada ferramenta de automação que você adota.',
+    '✦ Seu negócio no bolso dos seus clientes, sempre disponível.\n✦ Notificações push que mantêm o engajamento no máximo.\n✦ Experiência nativa que gera fidelidade e diferencia sua marca.'
+  ],
+  uk: [
+    '✦ Збільшує конверсії до 3x завдяки дизайну, орієнтованому на продажі.\n✦ Швидке завантаження та SEO-оптимізація, щоб Google знайшов вас першим.\n✦ Розроблений для перетворення відвідувачів на клієнтів із першої секунди.',
+    '✦ Автоматично відповідає та кваліфікує ліди без участі людини.\n✦ Доступний 24/7 — ніколи не пропускає жодної можливості продати.\n✦ Навчається і вдосконалюється з кожною розмовою.',
+    '✦ 80% клієнтів віддають перевагу WhatsApp як каналу спілкування.\n✦ Миттєві відповіді, що зміцнюють довіру і збільшують продажі.\n✦ Автоматизує follow-up та нагадування без жодних зусиль.',
+    '✦ Email-маркетинг приносить $42 на кожен вкладений $1.\n✦ Автоматичні послідовності, що перетворюють ліди на клієнтів.\n✦ Правильне повідомлення для правильної людини в потрібний момент.',
+    '✦ Централізує всю інформацію про клієнтів в одному місці.\n✦ Скорочує час управління до 60% завдяки автоматизованим процесам.\n✦ Візуалізуйте воронку продажів і виявляйте можливості миттєво.',
+    '✦ Приймайте рішення на основі реальних даних, а не інтуїції.\n✦ Виявляйте закономірності і тенденції раніше конкурентів.\n✦ KPI в реальному часі для швидких дій у потрібний момент.',
+    '✦ Усуває до 70% ручних та повторюваних завдань.\n✦ Зменшує людські помилки і підвищує операційну узгодженість.\n✦ Ваша команда зосереджена на тому, що реально приносить цінність.',
+    '✦ Підключає всі ваші інструменти в єдину екосистему.\n✦ Дані синхронізуються в реальному часі між платформами.\n✦ Усуває подвійну роботу і помилки ручного перенесення даних.',
+    '✦ Скорочує скасування до 80% завдяки автоматичним нагадуванням.\n✦ Розклад доступний 24/7, щоб клієнти бронювали коли зручно.\n✦ Звільняє години вашої команди для завдань із більшою цінністю.',
+    '✦ Автоматично захоплює кваліфіковані ліди прямо у ваш CRM.\n✦ Автоматична перевірка даних для чистої бази контактів.\n✦ Оптимізовані форми, що підвищують конверсію без ускладнень.',
+    '✦ Професійне перше враження для кожного клієнта, який звертається.\n✦ Жодного пропущеного дзвінка — кожен контакт фіксується.\n✦ Записує на прийом і відповідає на часті запитання без додаткового персоналу.',
+    '✦ Впроваджуйте ШІ стратегічно і вигідно з першого дня.\n✦ Уникайте дорогих помилок із персональною дорожньою картою.\n✦ Максимізуйте ROI кожного інструменту автоматизації.',
+    '✦ Ваш бізнес у кишені клієнтів, завжди доступний.\n✦ Push-сповіщення, що підтримують залученість на максимумі.\n✦ Нативний досвід, що формує лояльність і виділяє ваш бренд.'
+  ]
+};
+
+const problemDetails = allProblemDetails[lang];
+const serviceDetails = allServiceDetails[lang];
 ---
 
 <Layout lang={lang} title={titleMap[lang]} description={t.footer.tagline}>
@@ -35,8 +159,26 @@ const iconColors = ['icon-blue','icon-cyan','icon-purple','icon-green','icon-ora
     <div class="flex items-center justify-between h-16">
 
       <a href={langPaths[lang]} class="flex items-center gap-2.5 group">
-        <div class="w-9 h-9 rounded-xl gradient-border bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white font-black text-base group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/30">N</div>
-        <span class="text-xl font-black text-white tracking-tight">Nexia<span class="text-blue-400">MC</span></span>
+        <div class="w-10 h-10 flex-shrink-0 group-hover:scale-110 transition-transform drop-shadow-[0_0_12px_rgba(59,130,246,0.6)]">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+            <rect width="44" height="44" rx="10" fill="url(#nb1)"/>
+            <rect x="0.5" y="0.5" width="43" height="43" rx="9.5" stroke="url(#nb2)" stroke-width="1"/>
+            <path d="M9 34V10h6l11 16V10h9v24h-6L18 18v16H9z" fill="white"/>
+            <line x1="32" y1="2" x2="43" y2="13" stroke="#38bdf8" stroke-width="1.5" opacity="0.7"/>
+            <line x1="0" y1="42" x2="44" y2="42" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+            <defs>
+              <linearGradient id="nb1" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0b1a38"/>
+                <stop offset="1" stop-color="#071020"/>
+              </linearGradient>
+              <linearGradient id="nb2" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#3b82f6"/>
+                <stop offset="1" stop-color="#06b6d4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="text-xl font-black text-white tracking-tight">NEXIA<span class="text-blue-400">MC</span></span>
       </a>
 
       <div class="hidden md:flex items-center gap-8">
@@ -76,84 +218,195 @@ const iconColors = ['icon-blue','icon-cyan','icon-purple','icon-green','icon-ora
 
 
 <!-- ══════════ HERO ══════════ -->
-<section class="relative min-h-screen flex items-center overflow-hidden pt-16 animated-gradient">
+<section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-16 animated-gradient">
 
-  <!-- Hero background overlay -->
-  <div class="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-[#030712]/20 to-[#030712]/80"></div>
-
-  <!-- Particle canvas -->
+  <!-- Background -->
+  <div class="absolute inset-0 z-0 bg-gradient-to-br from-[#020510] via-[#030a1a] to-[#020510]"></div>
   <canvas id="particles" class="absolute inset-0 w-full h-full z-[1]"></canvas>
+  <div class="absolute inset-0 grid-bg opacity-30 z-[1]"></div>
+  <div class="blob w-[600px] h-[600px] bg-blue-700/18 -top-32 -left-20 z-[1]"></div>
+  <div class="blob blob-2 w-[500px] h-[500px] bg-cyan-600/10 bottom-0 right-0 z-[1]"></div>
 
-  <!-- Grid -->
-  <div class="absolute inset-0 grid-bg opacity-40 z-[1]"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-16">
 
-  <!-- Blobs -->
-  <div class="blob w-[700px] h-[700px] bg-blue-600/20 -top-32 -left-32 z-[1]"></div>
-  <div class="blob blob-2 w-[500px] h-[500px] bg-purple-600/15 bottom-0 right-0"></div>
-  <div class="blob blob-3 w-[400px] h-[400px] bg-cyan-500/15 top-1/2 right-1/4"></div>
+    <!-- Main 2-col grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
-  <!-- Spinning rings -->
-  <div class="absolute right-10 top-1/3 w-72 h-72 rounded-full border border-blue-500/15 spin-slow hidden lg:block"></div>
-  <div class="absolute right-20 top-1/3 w-52 h-52 rounded-full border border-cyan-500/10 hidden lg:block" style="animation: spin-slow 14s linear infinite reverse;"></div>
-  <div class="absolute right-32 top-1/3 w-32 h-32 rounded-full border border-purple-500/10 hidden lg:block" style="animation: spin-slow 8s linear infinite;"></div>
+      <!-- LEFT: Text -->
+      <div class="text-left">
 
-  <!-- Floating orbs -->
-  <div class="orb absolute top-1/3 right-10 w-3 h-3 bg-blue-400 rounded-full opacity-80 hidden lg:block shadow-lg shadow-blue-400/50"></div>
-  <div class="orb orb-2 absolute top-1/2 right-28 w-2 h-2 bg-cyan-400 rounded-full opacity-60 hidden lg:block"></div>
-  <div class="orb orb-3 absolute top-2/3 right-8 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-50 hidden lg:block"></div>
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 rounded-full px-4 py-2 mb-6 reveal shadow-lg shadow-blue-500/10">
+          <span class="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse flex-shrink-0"></span>
+          <span class="text-cyan-300 text-xs font-black tracking-[0.15em] uppercase">IA + AUTOMATIZACIÓN + RESULTADOS +</span>
+        </div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24">
-    <div class="text-center max-w-4xl mx-auto">
-
-      <!-- Badge -->
-      <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/25 rounded-full px-5 py-2 mb-8 reveal shadow-lg shadow-blue-500/10">
-        <span class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
-        <span class="text-blue-300 text-sm font-semibold">{t.hero.badge}</span>
-      </div>
-
-      <!-- Title -->
-      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-6 leading-[1.05] tracking-tight reveal reveal-delay-1">
-        {t.hero.title}
-        <span class="block bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent text-glow mt-1">
-          {t.hero.titleHighlight}
-        </span>
-      </h1>
-
-      <!-- Subtitle -->
-      <p class="text-lg sm:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed reveal reveal-delay-2">
-        {t.hero.subtitle}
-      </p>
-
-      <!-- CTAs -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal reveal-delay-3">
-        <a href="#contact" class="btn-shimmer text-white px-9 py-4 rounded-xl font-black text-base shadow-2xl shadow-blue-500/30">
-          📅 {t.hero.cta1}
-        </a>
-        <a href="https://wa.me/436766711940" target="_blank"
-           class="bg-white/5 hover:bg-white/10 text-white px-9 py-4 rounded-xl font-black text-base border border-white/15 hover:border-green-500/40 transition-all hover:scale-105 hover:shadow-lg hover:shadow-green-500/10">
-          💬 {t.hero.cta2}
-        </a>
-      </div>
-
-      <!-- Stats -->
-      <div class="flex flex-col sm:flex-row gap-10 justify-center mt-20 pt-10 border-t border-white/5 reveal reveal-delay-4">
-        {[
-          { val: '5-8', sub: lang==='es'?'días de entrega':lang==='en'?'days delivery':lang==='de'?'Tage Lieferzeit':lang==='pt'?'dias de entrega':'днів доставки' },
-          { val: '12+', sub: lang==='es'?'servicios':lang==='en'?'services':lang==='de'?'Leistungen':lang==='pt'?'serviços':'послуг' },
-          { val: '5',   sub: lang==='es'?'idiomas':lang==='en'?'languages':lang==='de'?'Sprachen':lang==='pt'?'idiomas':'мов' },
-          { val: '24h', sub: lang==='es'?'respuesta':lang==='en'?'response':lang==='de'?'Antwortzeit':lang==='pt'?'resposta':'відповідь' },
-        ].map(s => (
-          <div class="text-center group cursor-default">
-            <div class="text-4xl font-black text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 group-hover:bg-clip-text transition-all">{s.val}</div>
-            <div class="text-slate-500 text-sm mt-1 font-medium">{s.sub}</div>
+        <!-- Brand name large -->
+        <div class="reveal reveal-delay-1 mb-3">
+          <div class="text-5xl sm:text-6xl lg:text-7xl font-black tracking-[0.06em] leading-none" style="background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 40%, #93c5fd 70%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 30px rgba(59,130,246,0.4));">
+            NEXIAMC
           </div>
-        ))}
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-4 leading-snug tracking-tight reveal reveal-delay-2">
+          {t.hero.title}
+          <span class="block bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent text-glow mt-1">
+            {t.hero.titleHighlight}
+          </span>
+        </h1>
+
+        <!-- Slogan -->
+        <div class="reveal reveal-delay-3 mb-6">
+          <span class="text-xl sm:text-2xl lg:text-3xl font-black bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent text-glow leading-snug block">
+            {lang==='es'?'Solo trabajamos con empresas y negocios':lang==='en'?'We only work with businesses':lang==='de'?'Wir arbeiten nur mit Unternehmen,':lang==='pt'?'Trabalhamos apenas com empresas':'Ми працюємо лише з бізнесом,'}
+          </span>
+          <span class="text-xl sm:text-2xl lg:text-3xl font-black bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent text-glow leading-snug block">
+            {lang==='es'?'que están listos para crecer sin límites.':lang==='en'?'that are ready to grow without limits.':lang==='de'?'die bereit sind, grenzenlos zu wachsen.':lang==='pt'?'prontas para crescer sem limites.':'готовим рости без меж.'}
+          </span>
+        </div>
+
+        <!-- Subtitle -->
+        <p class="text-sm sm:text-base text-slate-400 mb-8 max-w-lg leading-relaxed reveal reveal-delay-4">
+          {t.hero.subtitle}
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 reveal reveal-delay-4">
+          <a href="#contact" class="btn-shimmer text-white px-8 py-4 rounded-xl font-black text-sm shadow-2xl shadow-blue-500/30 flex items-center justify-center gap-2">
+            {lang==='es'?'SOLICITAR DEMO':lang==='en'?'REQUEST DEMO':lang==='de'?'DEMO ANFRAGEN':lang==='pt'?'SOLICITAR DEMO':'ЗАПИТ ДЕМО'} →
+          </a>
+          <a href="#services"
+             class="bg-white/5 hover:bg-white/10 text-white px-8 py-4 rounded-xl font-black text-sm border border-white/20 hover:border-blue-500/50 transition-all hover:scale-105 hover:shadow-lg hover:shadow-blue-500/10 flex items-center justify-center gap-2">
+            {lang==='es'?'VER SERVICIOS':lang==='en'?'VIEW SERVICES':lang==='de'?'LEISTUNGEN':lang==='pt'?'VER SERVIÇOS':'ПОСЛУГИ'}
+          </a>
+        </div>
+
+        <!-- Stats row -->
+        <div class="flex flex-wrap gap-8 mt-10 pt-8 border-t border-white/5 reveal reveal-delay-4">
+          {[
+            { val: '500+', sub: lang==='es'?'empresas':lang==='en'?'businesses':lang==='de'?'Unternehmen':lang==='pt'?'empresas':'компаній' },
+            { val: '1M+', sub: lang==='es'?'conversaciones':lang==='en'?'conversations':lang==='de'?'Gespräche':lang==='pt'?'conversas':'розмов' },
+            { val: '98%', sub: lang==='es'?'satisfacción':lang==='en'?'satisfaction':lang==='de'?'Zufriedenheit':lang==='pt'?'satisfação':'задоволення' },
+            { val: '24/7', sub: lang==='es'?'disponibilidad':lang==='en'?'availability':lang==='de'?'Verfügbarkeit':lang==='pt'?'disponibilidade':'доступність' },
+          ].map(s => (
+            <div class="text-left group cursor-default">
+              <div class="text-3xl font-black text-white group-hover:text-blue-400 transition-colors">{s.val}</div>
+              <div class="text-slate-500 text-xs mt-0.5 font-medium">{s.sub}</div>
+            </div>
+          ))}
+        </div>
+
       </div>
 
+      <!-- RIGHT: Robot visual -->
+      <div class="hidden lg:block relative h-[580px]">
+
+        <!-- Hero mockup image -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <img
+            src="/mockup-hero.png"
+            alt="NexiaMC Platform"
+            class="w-full h-full object-cover object-center rounded-2xl"
+            style="filter: drop-shadow(0 0 40px rgba(59,130,246,0.4)) drop-shadow(0 0 80px rgba(0,200,255,0.15));"
+          />
+          <!-- Overlay gradient para blend con el fondo -->
+          <div class="absolute inset-0 rounded-2xl" style="background: linear-gradient(to left, transparent 60%, #020510 100%);"></div>
+          <!-- Glow base -->
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-72 h-24 bg-blue-500/20 blur-3xl rounded-full pointer-events-none"></div>
+        </div>
+
+        <!-- Floating service icons -->
+        <div class="absolute top-16 left-0 animate-float-slow">
+          <div class="bg-[#0a1525]/90 border border-blue-500/30 rounded-2xl px-3 py-2.5 backdrop-blur-sm flex items-center gap-2 shadow-lg shadow-blue-500/15">
+            <span class="text-xl">💬</span>
+            <span class="text-white text-xs font-bold">WhatsApp</span>
+          </div>
+        </div>
+        <div class="absolute top-8 right-12 animate-float-med">
+          <div class="bg-[#0a1525]/90 border border-cyan-500/30 rounded-2xl px-3 py-2.5 backdrop-blur-sm flex items-center gap-2 shadow-lg shadow-cyan-500/15">
+            <span class="text-xl">📊</span>
+            <span class="text-white text-xs font-bold">CRM</span>
+          </div>
+        </div>
+        <div class="absolute top-40 right-4 animate-float-slow">
+          <div class="bg-[#0a1525]/90 border border-blue-500/30 rounded-2xl px-3 py-2.5 backdrop-blur-sm flex items-center gap-2 shadow-lg shadow-blue-500/15">
+            <span class="text-xl">📞</span>
+            <span class="text-white text-xs font-bold">Llamadas</span>
+          </div>
+        </div>
+        <div class="absolute bottom-48 left-2 animate-float-med">
+          <div class="bg-[#0a1525]/90 border border-purple-500/30 rounded-2xl px-3 py-2.5 backdrop-blur-sm flex items-center gap-2 shadow-lg shadow-purple-500/15">
+            <span class="text-xl">🌐</span>
+            <span class="text-white text-xs font-bold">Web</span>
+          </div>
+        </div>
+        <div class="absolute bottom-32 right-6 animate-float-slow">
+          <div class="bg-[#0a1525]/90 border border-green-500/30 rounded-2xl px-3 py-2.5 backdrop-blur-sm flex items-center gap-2 shadow-lg shadow-green-500/15">
+            <span class="text-xl">📧</span>
+            <span class="text-white text-xs font-bold">Email</span>
+          </div>
+        </div>
+        <div class="absolute top-60 left-4 animate-float-med">
+          <div class="bg-[#0a1525]/90 border border-orange-500/30 rounded-2xl px-3 py-2.5 backdrop-blur-sm flex items-center gap-2 shadow-lg shadow-orange-500/15">
+            <span class="text-xl">📈</span>
+            <span class="text-white text-xs font-bold">Análisis</span>
+          </div>
+        </div>
+
+
+      </div>
     </div>
+
+    <!-- Bottom 4 feature cards -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-14 reveal">
+      {[
+        { icon: '🤖', title: lang==='es'?'RECEPCIONISTA VIRTUAL IA':lang==='en'?'VIRTUAL AI RECEPTIONIST':lang==='de'?'KI-VIRTUALREZEPTION':lang==='pt'?'RECEPCIONISTA VIRTUAL IA':'ВІРТУАЛЬНИЙ АДМІНІСТРАТОР', desc: lang==='es'?'Atiende, responde y convierte clientes 24/7 sin descanso.':lang==='en'?'Attend, respond and convert clients 24/7 non-stop.':lang==='de'?'Kunden rund um die Uhr betreuen und konvertieren.':lang==='pt'?'Atende, responde e converte clientes 24/7.':'Обслуговує клієнтів цілодобово без зупинки.' },
+        { icon: '⚡', title: lang==='es'?'AUTOMATIZACIONES INTELIGENTES':lang==='en'?'SMART AUTOMATIONS':lang==='de'?'INTELLIGENTE AUTOMATISIERUNG':lang==='pt'?'AUTOMATIZAÇÕES INTELIGENTES':'РОЗУМНА АВТОМАТИЗАЦІЯ', desc: lang==='es'?'Automatiza procesos y ahorra tiempo y dinero.':lang==='en'?'Automate processes and save time and money.':lang==='de'?'Prozesse automatisieren und Zeit sparen.':lang==='pt'?'Automatize processos e economize tempo e dinheiro.':'Автоматизуйте процеси та економте час і гроші.' },
+        { icon: '📊', title: lang==='es'?'ANÁLISIS AVANZADO':lang==='en'?'ADVANCED ANALYTICS':lang==='de'?'ERWEITERTE ANALYSE':lang==='pt'?'ANÁLISE AVANÇADA':'РОЗШИРЕНА АНАЛІТИКА', desc: lang==='es'?'Datos en tiempo real para tomar decisiones inteligentes.':lang==='en'?'Real-time data to make intelligent decisions.':lang==='de'?'Echtzeitdaten für intelligente Entscheidungen.':lang==='pt'?'Dados em tempo real para decisões inteligentes.':'Дані в реальному часі для розумних рішень.' },
+        { icon: '🔒', title: lang==='es'?'SEGURIDAD TOTAL':lang==='en'?'TOTAL SECURITY':lang==='de'?'TOTALE SICHERHEIT':lang==='pt'?'SEGURANÇA TOTAL':'ПОВНА БЕЗПЕКА', desc: lang==='es'?'Protegemos tu empresa con tecnología de última generación.':lang==='en'?'We protect your business with cutting-edge technology.':lang==='de'?'Wir schützen Ihr Unternehmen mit modernster Technologie.':lang==='pt'?'Protegemos sua empresa com tecnologia de ponta.':'Захищаємо ваш бізнес за допомогою передових технологій.' },
+      ].map(card => (
+        <div class="bg-[#060d1f]/80 border border-blue-900/30 rounded-2xl p-4 backdrop-blur-sm hover:border-blue-500/40 transition-all group">
+          <div class="text-2xl mb-2">{card.icon}</div>
+          <div class="text-white font-black text-xs mb-1.5 leading-tight">{card.title}</div>
+          <div class="text-slate-500 text-xs leading-relaxed">{card.desc}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom ticker bar -->
+    <div class="text-center mt-6 text-slate-600 text-[11px] tracking-[0.35em] uppercase font-bold">
+      TECNOLOGÍA &nbsp;•&nbsp; INNOVACIÓN &nbsp;•&nbsp; RESULTADOS
+    </div>
+
   </div>
 </section>
 
+
+<!-- ══════════ SHOWCASE GRID ══════════ -->
+<section class="relative bg-[#030a18] py-16 overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-20 pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10 reveal">
+      <p class="text-blue-400 text-xs font-black tracking-[0.3em] uppercase mb-3">NUESTRAS SOLUCIONES EN ACCIÓN</p>
+      <h2 class="text-3xl sm:text-4xl font-black text-white">
+        {lang==='es'?'Tecnología que':lang==='en'?'Technology that':lang==='de'?'Technologie die':lang==='pt'?'Tecnologia que':'Технологія що'}
+        <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"> {lang==='es'?'transforma negocios':lang==='en'?'transforms businesses':lang==='de'?'Unternehmen transformiert':lang==='pt'?'transforma negócios':'трансформує бізнес'}</span>
+      </h2>
+    </div>
+    <div class="relative reveal reveal-delay-1 group">
+      <div class="absolute -inset-1 bg-gradient-to-r from-blue-600/30 via-cyan-500/20 to-blue-600/30 rounded-3xl blur-xl opacity-60 group-hover:opacity-90 transition-opacity duration-700"></div>
+      <div class="relative rounded-2xl overflow-hidden border border-blue-500/20 shadow-2xl shadow-blue-500/10">
+        <img
+          src="/mockup-grid.png"
+          alt="NexiaMC — Soluciones completas"
+          class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-700"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#030a18]/60 via-transparent to-transparent pointer-events-none"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══════════ WAVE ══════════ -->
 <div class="wave-divider -mt-1">
@@ -176,10 +429,18 @@ const iconColors = ['icon-blue','icon-cyan','icon-purple','icon-green','icon-ora
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {t.problem.items.map((item, i) => (
-        <div class={`glow-card bg-[#0d0a18]/80 border border-red-900/20 rounded-2xl p-6 backdrop-blur-sm reveal reveal-delay-${(i%3)+1}`}>
-          <div class="w-11 h-11 icon-red rounded-xl flex items-center justify-center mb-4 text-lg">⚠️</div>
+        <div class={`problem-card-expand glow-card bg-[#0d0a18]/80 border border-red-900/20 rounded-2xl p-6 backdrop-blur-sm reveal reveal-delay-${(i%3)+1} cursor-pointer select-none`} data-index={i}>
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-11 h-11 icon-red rounded-xl flex items-center justify-center mb-4 text-lg flex-shrink-0">⚠️</div>
+            <div class="expand-arrow text-slate-600 text-lg mt-1 transition-transform duration-300">▾</div>
+          </div>
           <h3 class="text-white font-bold mb-2">{item.title}</h3>
           <p class="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+          <div class="expand-detail overflow-hidden max-h-0 transition-all duration-400">
+            <div class="mt-3 pt-3 border-t border-red-900/20">
+              <p class="text-slate-400 text-xs leading-relaxed expand-text"></p>
+            </div>
+          </div>
         </div>
       ))}
     </div>
@@ -224,11 +485,17 @@ const iconColors = ['icon-blue','icon-cyan','icon-purple','icon-green','icon-ora
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
       {t.services.items.map((s, i) => (
-        <div class={`glow-card bg-[#070d20]/80 border border-blue-900/20 rounded-2xl p-5 group backdrop-blur-sm reveal reveal-delay-${(i%4)+1}`}>
-          <div class={`w-11 h-11 ${iconColors[i]} rounded-xl flex items-center justify-center mb-3 text-lg group-hover:scale-110 transition-transform`}>{s.icon}</div>
+        <div class={`service-card-expand glow-card bg-[#070d20]/80 border border-blue-900/20 rounded-2xl p-5 backdrop-blur-sm reveal reveal-delay-${(i%4)+1} cursor-pointer select-none`} data-index={i}>
+          <div class="flex items-start justify-between gap-2 mb-3">
+            <div class={`w-11 h-11 ${iconColors[i]} rounded-xl flex items-center justify-center text-lg flex-shrink-0 transition-transform duration-300`}>{s.icon}</div>
+            <div class="service-expand-arrow text-slate-600 text-base mt-1 transition-transform duration-300 flex-shrink-0">▾</div>
+          </div>
           <h3 class="text-white font-bold mb-1.5 text-sm leading-snug">{s.title}</h3>
           <p class="text-slate-500 text-xs leading-relaxed">{s.desc}</p>
-          <div class="mt-3 h-0.5 bg-gradient-to-r from-blue-500/0 via-blue-500/60 to-blue-500/0 w-0 group-hover:w-full transition-all duration-500 rounded-full"></div>
+          <div class="service-expand-detail overflow-hidden" style="max-height:0;transition:max-height 0.35s ease;">
+            <div class="service-expand-text text-blue-300/80 text-xs leading-relaxed pt-3 mt-3 border-t border-blue-900/40"></div>
+          </div>
+          <div class="mt-3 h-px bg-gradient-to-r from-blue-500/0 via-blue-500/60 to-blue-500/0 w-0 service-line transition-all duration-500 rounded-full"></div>
         </div>
       ))}
     </div>
@@ -259,9 +526,10 @@ const iconColors = ['icon-blue','icon-cyan','icon-purple','icon-green','icon-ora
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-14 items-center reveal">
       <div class="relative rounded-2xl overflow-hidden border border-indigo-500/15 shadow-2xl shadow-indigo-500/10">
         <img
-          src="https://images.pexels.com/photos/8849295/pexels-photo-8849295.jpeg?auto=compress&cs=tinysrgb&w=900"
-          alt="AI Intelligence"
-          class="w-full h-72 object-cover opacity-75"
+          src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=900"
+          alt="IA Humanoid"
+          class="w-full h-72 object-cover opacity-80"
+          style="filter: hue-rotate(10deg) saturate(1.2);"
         />
         <div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#060720]/80"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-[#060720] via-transparent to-transparent"></div>
@@ -400,6 +668,45 @@ const iconColors = ['icon-blue','icon-cyan','icon-purple','icon-green','icon-ora
 <!-- ══════════ WAVE ══════════ -->
 <div class="wave-divider -mt-1">
   <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,20 C480,70 960,0 1440,50 L1440,70 L0,70 Z" fill="#030a18"/>
+  </svg>
+</div>
+
+
+<!-- ══════════ BENEFITS ══════════ -->
+<section class="py-28 relative overflow-hidden" style="background: #030a18;">
+  <div class="blob w-[500px] h-[400px] bg-blue-600/10 top-1/2 left-0 -translate-y-1/2"></div>
+  <div class="blob blob-2 w-[400px] h-[300px] bg-cyan-600/8 bottom-0 right-0"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Big headline -->
+      <div class="reveal">
+        <span class="text-blue-400 text-xs font-black uppercase tracking-widest">Beneficios</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-4 mb-6 leading-tight">
+          {t.benefits.title}<span class="text-blue-400">.</span>
+        </h2>
+        <p class="text-slate-400 text-lg leading-relaxed">{t.benefits.subtitle}</p>
+      </div>
+
+      <!-- Right: 2x2 grid cards -->
+      <div class="grid grid-cols-2 gap-4">
+        {t.benefits.items.map((item, i) => (
+          <div class={`glow-card bg-[#070e22]/80 border border-blue-900/20 rounded-2xl p-5 backdrop-blur-sm reveal reveal-delay-${i+1}`}>
+            <h3 class="text-white font-black mb-2 text-sm">{item.title}</h3>
+            <p class="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ WAVE ══════════ -->
+<div class="wave-divider -mt-1">
+  <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     <path d="M0,30 C480,70 960,0 1440,40 L1440,70 L0,70 Z" fill="#030e10"/>
   </svg>
 </div>
@@ -507,8 +814,26 @@ const iconColors = ['icon-blue','icon-cyan','icon-purple','icon-green','icon-ora
     <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
       <div>
         <div class="flex items-center gap-2.5 mb-2">
-          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-black text-sm shadow-lg shadow-blue-500/30">N</div>
-          <span class="text-xl font-black text-white">Nexia<span class="text-blue-400">MC</span></span>
+          <div class="w-9 h-9 flex-shrink-0 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">
+            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+              <rect width="44" height="44" rx="10" fill="url(#fb1)"/>
+              <rect x="0.5" y="0.5" width="43" height="43" rx="9.5" stroke="url(#fb2)" stroke-width="1"/>
+              <path d="M9 34V10h6l11 16V10h9v24h-6L18 18v16H9z" fill="white"/>
+              <line x1="32" y1="2" x2="43" y2="13" stroke="#38bdf8" stroke-width="1.5" opacity="0.7"/>
+              <line x1="0" y1="42" x2="44" y2="42" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+              <defs>
+                <linearGradient id="fb1" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#0b1a38"/>
+                  <stop offset="1" stop-color="#071020"/>
+                </linearGradient>
+                <linearGradient id="fb2" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#3b82f6"/>
+                  <stop offset="1" stop-color="#06b6d4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="text-xl font-black text-white">NEXIA<span class="text-blue-400">MC</span></span>
         </div>
         <p class="text-slate-700 text-sm max-w-xs">{t.footer.tagline}</p>
       </div>
@@ -538,26 +863,80 @@ const iconColors = ['icon-blue','icon-cyan','icon-purple','icon-green','icon-ora
 </a>
 
 
-<script>
+<script is:inline define:vars={{ problemDetails, serviceDetails }}>
   /* ── Scroll reveal ── */
-  const obs = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  const obs = new IntersectionObserver(function(e) { e.forEach(function(x) { if (x.isIntersecting) x.target.classList.add('visible'); }); }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+
+  /* ── Problem cards accordion ── */
+  document.querySelectorAll('.problem-card-expand').forEach(function(card) {
+    const idx = parseInt(card.dataset.index || '0');
+    const detail = card.querySelector('.expand-detail');
+    const text = card.querySelector('.expand-text');
+    const arrow = card.querySelector('.expand-arrow');
+    if (text && problemDetails[idx]) text.textContent = problemDetails[idx];
+    card.addEventListener('click', function() {
+      const isOpen = card.classList.contains('expanded');
+      document.querySelectorAll('.problem-card-expand.expanded').forEach(function(c) {
+        c.classList.remove('expanded');
+        const d = c.querySelector('.expand-detail');
+        const a = c.querySelector('.expand-arrow');
+        if (d) d.style.maxHeight = '0';
+        if (a) a.style.transform = 'rotate(0deg)';
+      });
+      if (!isOpen && detail && arrow) {
+        card.classList.add('expanded');
+        detail.style.maxHeight = detail.scrollHeight + 'px';
+        arrow.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+
+  /* ── Service cards accordion ── */
+  document.querySelectorAll('.service-card-expand').forEach(function(card) {
+    const idx = parseInt(card.dataset.index || '0');
+    const detail = card.querySelector('.service-expand-detail');
+    const text = card.querySelector('.service-expand-text');
+    const arrow = card.querySelector('.service-expand-arrow');
+    const line = card.querySelector('.service-line');
+    if (text && serviceDetails[idx]) {
+      text.innerHTML = serviceDetails[idx].split('\n').map(function(l) { return '<span class="block mb-1">' + l + '</span>'; }).join('');
+    }
+    card.addEventListener('click', function() {
+      const isOpen = card.classList.contains('svc-expanded');
+      document.querySelectorAll('.service-card-expand.svc-expanded').forEach(function(c) {
+        c.classList.remove('svc-expanded');
+        const d = c.querySelector('.service-expand-detail');
+        const a = c.querySelector('.service-expand-arrow');
+        const ln = c.querySelector('.service-line');
+        if (d) d.style.maxHeight = '0';
+        if (a) a.style.transform = 'rotate(0deg)';
+        if (ln) ln.style.width = '0';
+      });
+      if (!isOpen && detail && arrow) {
+        card.classList.add('svc-expanded');
+        detail.style.maxHeight = detail.scrollHeight + 'px';
+        arrow.style.transform = 'rotate(180deg)';
+        if (line) line.style.width = '100%';
+      }
+    });
+  });
 
   /* ── Particle canvas ── */
-  const canvas = document.getElementById('particles') as HTMLCanvasElement;
+  const canvas = document.getElementById('particles');
   if (canvas) {
-    const ctx = canvas.getContext('2d')!;
-    function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
-    resize();
-    window.addEventListener('resize', resize);
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
 
-    const pts = Array.from({length: 75}, () => ({
+    const pts = Array.from({length: 75}, function() { return {
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.45,
       vy: (Math.random() - 0.5) * 0.45,
       r: Math.random() * 1.5 + 0.5,
-    }));
+    }; });
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -578,7 +957,7 @@ const iconColors = ['icon-blue','icon-cyan','icon-purple','icon-green','icon-ora
             ctx.beginPath();
             ctx.moveTo(pts[i].x, pts[i].y);
             ctx.lineTo(pts[j].x, pts[j].y);
-            ctx.strokeStyle = `rgba(59,130,246,${0.28*(1-d/130)})`;
+            ctx.strokeStyle = 'rgba(59,130,246,' + (0.28*(1-d/130)) + ')';
             ctx.lineWidth = 0.7;
             ctx.stroke();
           }
@@ -590,29 +969,31 @@ const iconColors = ['icon-blue','icon-cyan','icon-purple','icon-green','icon-ora
   }
 
   /* ── 3D card tilt ── */
-  document.querySelectorAll<HTMLElement>('.glow-card').forEach(card => {
-    card.addEventListener('mouseenter', () => { card.style.transition = 'transform 0.1s ease, box-shadow 0.3s ease, border-color 0.3s ease'; });
-    card.addEventListener('mousemove', e => {
+  document.querySelectorAll('.glow-card').forEach(function(card) {
+    card.addEventListener('mouseenter', function() { card.style.transition = 'transform 0.1s ease, box-shadow 0.3s ease, border-color 0.3s ease'; });
+    card.addEventListener('mousemove', function(e) {
       const r = card.getBoundingClientRect();
       const x = (e.clientX - r.left) / r.width  - 0.5;
       const y = (e.clientY - r.top)  / r.height - 0.5;
-      card.style.transform = `perspective(900px) rotateX(${-y*7}deg) rotateY(${x*7}deg) translateZ(10px)`;
+      card.style.transform = 'perspective(900px) rotateX(' + (-y*7) + 'deg) rotateY(' + (x*7) + 'deg) translateZ(10px)';
     });
-    card.addEventListener('mouseleave', () => {
+    card.addEventListener('mouseleave', function() {
       card.style.transition = 'transform 0.45s ease, box-shadow 0.3s ease, border-color 0.3s ease';
       card.style.transform  = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0)';
     });
   });
 
   /* ── Form ── */
-  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const form = document.getElementById('contact-form');
   const ok   = document.getElementById('form-success');
-  form?.addEventListener('submit', e => {
-    e.preventDefault();
-    ok?.classList.remove('hidden');
-    form.reset();
-    setTimeout(() => ok?.classList.add('hidden'), 5000);
-  });
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (ok) ok.classList.remove('hidden');
+      form.reset();
+      setTimeout(function() { if (ok) ok.classList.add('hidden'); }, 5000);
+    });
+  }
 </script>
 
 </Layout>
